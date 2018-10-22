@@ -1,16 +1,20 @@
+[![Clojars Project](https://img.shields.io/clojars/v/ant.design.svg)](https://clojars.org/ant.design)
+[![GitHub License](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE)
+
 # ant.design
 
+#### Quick Start Guide
 
-## Overview
+Add the following project dependency:
 
-TBD
+```clojure
+;; project.clj
+[ant.design "3.10.1-1-SNAPSHOT"]
 
-## Usage
+;; deps.edn
+{:deps {ant.design {:mvn/version "3.10.1-1-SNAPSHOT"}}}
+```
 
-TBD
-
-## License
+#### License
 
 Copyright © 2018 Ilshat Sultanov
-
-[![MIT License](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE)
