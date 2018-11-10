@@ -5,6 +5,10 @@
             [goog.object :as gobj]
             [cljsjs.antd]))
 
+;;
+;; Helpers
+;;
+
 (defn- get-path [component-name]
   (str/split component-name #"\."))
 
@@ -14,6 +18,10 @@
     (reagent/adapt-react-class
       (apply gobj/getValueByKeys js/antd path))))
 
+
+;;
+;; Components
+;;
 
 (def affix (component "Affix"))
 (def alert (component "Alert"))
@@ -113,3 +121,44 @@
 (def tree-tree-node (component "Tree.TreeNode"))
 (def upload (component "Upload"))
 (def upload-dragger (component "Upload.Dragger"))
+
+
+;;
+;; Notifications
+;;
+
+(defn- notification [type config]
+  (let [config (clj->js config)]
+    (js-invoke (.. js/antd .-notification) type config)))
+
+
+(defn notification-success [config]
+  (notification "success" config))
+
+
+(defn notification-error [config]
+  (notification "error" config))
+
+
+(defn notification-warning [config]
+  (notification "warning" config))
+
+
+(defn notification-warn [config]
+  (notification "warn" config))
+
+
+(defn notification-open [config]
+  (notification "open" config))
+
+
+(defn notification-close [key]
+  (js-invoke (.. js/antd .-notification) "close" key))
+
+
+(defn notification-destroy []
+  (js-invoke (.. js/antd .-notification) "destroy"))
+
+
+(defn notification-config [options]
+  (notification "config" options))
