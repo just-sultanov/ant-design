@@ -129,7 +129,7 @@
 
 (defn- notification [type config]
   (let [config (clj->js config)]
-    (js-invoke (.. js/antd .-notification) type config)))
+    (js-invoke (.. js/antd -notification) type config)))
 
 
 (defn notification-success [config]
@@ -153,11 +153,11 @@
 
 
 (defn notification-close [key]
-  (js-invoke (.. js/antd .-notification) "close" key))
+  (js-invoke (.. js/antd -notification) "close" key))
 
 
 (defn notification-destroy []
-  (js-invoke (.. js/antd .-notification) "destroy"))
+  (js-invoke (.. js/antd -notification) "destroy"))
 
 
 (defn notification-config [options]
