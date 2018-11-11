@@ -127,7 +127,7 @@
 ;; Notifications
 ;;
 
-(defn- notification [type config]
+(defn notification [type config]
   (let [config (clj->js config)]
     (js-invoke (.. js/antd -notification) type config)))
 
