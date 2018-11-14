@@ -3,8 +3,8 @@
            org.clojure/clojurescript {:mvn/version "1.10.439"}
            reagent                   {:mvn/version "0.8.1"}
            cljsjs/antd               {:mvn/version "3.10.1-0"}
-           cljsjs/moment             {:mvn/version "2.22.2-1"}}
+           cljsjs/moment             {:mvn/version "2.22.2-2"}}
  :aliases {:build {:extra-deps {luchiniatwork/cambada {:mvn/version "1.0.0"}}
                    :main-opts  ["--main" "cambada.uberjar"
                                 "--app-artifact-id" "ant.design"
-                                "--app-version" "3.10.1-6"]}}}
+                                "--app-version" "3.10.1-7"]}}}
