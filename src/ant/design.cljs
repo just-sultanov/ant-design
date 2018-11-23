@@ -1,9 +1,11 @@
 (ns ant.design
   (:refer-clojure :exclude [list])
-  (:require [clojure.string :as str]
-            [reagent.core :as reagent]
+  (:require [cljsjs.antd]
             [goog.object :as gobj]
-            [cljsjs.antd]))
+            [clojure.string :as str]
+            [reagent.core :as reagent]
+            [reagent.interop :as interop]
+            [reagent.impl.template :as template]))
 
 ;;
 ;; Helpers
@@ -17,6 +19,24 @@
   (let [path (get-path component-name)]
     (reagent/adapt-react-class
       (apply gobj/getValueByKeys js/antd path))))
+
+
+(defn- get-component-name [x]
+  (interop/$ x :name))
+
+
+;;
+;; Patch for reagent
+;;
+;; Disable move caret to end on typing.
+;; For using :value instead :defaultValue in component props
+
+(set! template/input-component?
+      (fn [x]
+        (or (= x "input")
+            (= x "textarea")
+            (= (get-component-name x) "Input")
+            (= (get-component-name x) "TextArea"))))
 
 
 ;;
