@@ -1,5 +1,5 @@
 (ns ant.design
-  (:refer-clojure :exclude [list])
+  (:refer-clojure :exclude [comment empty list])
   (:require [cljsjs.antd]
             [goog.object :as gobj]
             [clojure.string :as str]
@@ -26,17 +26,17 @@
 
 
 ;;
-;; Patch for reagent
+;; Patch for reagent (doesn't work with advanced compile optimization)
+;; See examples in README.md
 ;;
-;; Disable move caret to end on typing.
-;; For using :value instead :defaultValue in component props
 
-(set! template/input-component?
-      (fn [x]
-        (or (= x "input")
-            (= x "textarea")
-            (= (get-component-name x) "Input")
-            (= (get-component-name x) "TextArea"))))
+(defn fix-caret-position! []
+  (set! template/input-component?
+        (fn [x]
+          (or (= x "input")
+              (= x "textarea")
+              (= (get-component-name x) "Input")
+              (= (get-component-name x) "TextArea")))))
 
 
 ;;
@@ -68,6 +68,8 @@
 (def col (component "Col"))
 (def collapse (component "Collapse"))
 (def collapse-panel (component "Collapse.Panel"))
+(def comment (component "Comment"))
+(def config-provider (component "ConfigProvider"))
 (def date-picker (component "DatePicker"))
 (def date-picker-month-picker (component "DatePicker.MonthPicker"))
 (def date-picker-range-picker (component "DatePicker.RangePicker"))
@@ -76,11 +78,13 @@
 (def drawer (component "Drawer"))
 (def dropdown (component "Dropdown"))
 (def dropdown-button (component "Dropdown.Button"))
+(def empty (component "Empty"))
 (def form (component "Form"))
 (def form-item (component "Form.Item"))
 (def icon (component "Icon"))
 (def input (component "Input"))
 (def input-group (component "Input.Group"))
+(def input-password (component "Input.Password"))
 (def input-search (component "Input.Search"))
 (def input-text-area (component "Input.TextArea"))
 (def input-number (component "InputNumber"))
@@ -116,6 +120,8 @@
 (def skeleton (component "Skeleton"))
 (def slider (component "Slider"))
 (def spin (component "Spin"))
+(def statistic (component "Statistic"))
+(def statistic-countdown (component "Statistic.Countdown"))
 (def steps (component "Steps"))
 (def steps-step (component "Steps.Step"))
 (def switch (component "Switch"))
@@ -136,9 +142,9 @@
 (def transfer-search (component "Transfer.Search"))
 (def tree (component "Tree"))
 (def tree-directory-tree (component "Tree.DirectoryTree"))
+(def tree-tree-node (component "Tree.TreeNode"))
 (def tree-select (component "TreeSelect"))
 (def tree-select-tree-node (component "TreeSelect.TreeNode"))
-(def tree-tree-node (component "Tree.TreeNode"))
 (def upload (component "Upload"))
 (def upload-dragger (component "Upload.Dragger"))
 
