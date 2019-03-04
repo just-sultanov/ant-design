@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>ant.design</groupId>
     <artifactId>ant.design</artifactId>
-    <version>3.13.3-3</version>
+    <version>3.13.6-0</version>
     <name>ant.design</name>
     <dependencies>
         <dependency>
@@ -25,7 +25,7 @@
         <dependency>
             <groupId>cljsjs</groupId>
             <artifactId>antd</artifactId>
-            <version>3.13.3-3</version>
+            <version>3.13.6-0</version>
         </dependency>
     </dependencies>
     <build>

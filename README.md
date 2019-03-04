@@ -9,10 +9,10 @@ Add the following project dependency:
 
 ```clojure
 ;; project.clj or build.boot
-[ant.design "3.13.3-3"]
+[ant.design "3.13.6-0"]
 
 ;; deps.edn
-{:deps {ant.design {:mvn/version "3.13.3-3"}}}
+{:deps {ant.design {:mvn/version "3.13.6-0"}}}
 ```
 
 
