@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>ant.design</groupId>
     <artifactId>ant.design</artifactId>
-    <version>3.14.1-0</version>
+    <version>3.14.1-1</version>
     <name>ant.design</name>
     <dependencies>
         <dependency>

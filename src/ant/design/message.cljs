@@ -12,7 +12,7 @@
 ;;
 
 (defn- message [& args]
-  (apply-fn "message" args))
+  (apply apply-fn "message" args))
 
 
 ;;

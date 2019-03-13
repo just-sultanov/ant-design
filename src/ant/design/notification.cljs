@@ -16,7 +16,7 @@
 ;;
 
 (defn- notification [& args]
-  (apply-fn "notification" args))
+  (apply apply-fn "notification" args))
 
 
 ;;
