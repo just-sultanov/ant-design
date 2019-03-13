@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>ant.design</groupId>
     <artifactId>ant.design</artifactId>
-    <version>3.13.6-0</version>
+    <version>3.14.1-0</version>
     <name>ant.design</name>
     <dependencies>
         <dependency>
@@ -25,7 +25,7 @@
         <dependency>
             <groupId>cljsjs</groupId>
             <artifactId>antd</artifactId>
-            <version>3.13.6-0</version>
+            <version>3.14.1-0</version>
         </dependency>
     </dependencies>
     <build>
@@ -53,7 +53,7 @@
             <url>https://clojars.org/repo</url>
         </repository>
     </distributionManagement>
-    <description>ClojureScript library for Ant Design</description>
+    <description>A ClojureScript library for Ant Design</description>
     <url>https://github.com/just-sultanov/ant-design</url>
     <licenses>
         <license>

@@ -1,46 +1,11 @@
 (ns ant.design
+  "A ClojureScript library for Ant Design."
   (:refer-clojure :exclude [comment empty list])
   (:require [cljsjs.antd]
-            [goog.object :as gobj]
-            [clojure.string :as str]
-            [reagent.core :as reagent]
-            [reagent.interop :as interop]
-            [reagent.impl.template :as template]))
+            [ant.design.utils :refer [component]]))
 
 ;;
-;; Helpers
-;;
-
-(defn- get-path [component-name]
-  (str/split component-name #"\."))
-
-
-(defn- component [component-name]
-  (let [path (get-path component-name)]
-    (reagent/adapt-react-class
-      (apply gobj/getValueByKeys js/antd path))))
-
-
-(defn- get-component-name [x]
-  (interop/$ x :name))
-
-
-;;
-;; Patch for reagent (doesn't work with advanced compile optimization)
-;; See examples in README.md
-;;
-
-(defn fix-caret-position! []
-  (set! template/input-component?
-        (fn [x]
-          (or (= x "input")
-              (= x "textarea")
-              (= (get-component-name x) "Input")
-              (= (get-component-name x) "TextArea")))))
-
-
-;;
-;; Components
+;; Components API
 ;;
 
 (def affix (component "Affix"))
@@ -105,6 +70,7 @@
 (def menu-item-group (component "Menu.ItemGroup"))
 (def menu-sub-menu (component "Menu.SubMenu"))
 (def modal (component "Modal"))
+(def page-header (component "PageHeader"))
 (def pagination (component "Pagination"))
 (def popconfirm (component "Popconfirm"))
 (def popover (component "Popover"))
@@ -145,46 +111,9 @@
 (def tree-tree-node (component "Tree.TreeNode"))
 (def tree-select (component "TreeSelect"))
 (def tree-select-tree-node (component "TreeSelect.TreeNode"))
+(def typography (component "Typography"))
+(def typography-paragraph (component "Typography.Paragraph"))
+(def typography-text (component "Typography.Text"))
+(def typography-title (component "Typography.Title"))
 (def upload (component "Upload"))
 (def upload-dragger (component "Upload.Dragger"))
-
-
-;;
-;; Notifications
-;;
-
-(defn notification [type config]
-  (let [config (clj->js config)]
-    (js-invoke (.. js/antd -notification) type config)))
-
-
-(defn notification-success [config]
-  (notification "success" config))
-
-
-(defn notification-error [config]
-  (notification "error" config))
-
-
-(defn notification-warning [config]
-  (notification "warning" config))
-
-
-(defn notification-warn [config]
-  (notification "warn" config))
-
-
-(defn notification-open [config]
-  (notification "open" config))
-
-
-(defn notification-close [key]
-  (js-invoke (.. js/antd -notification) "close" key))
-
-
-(defn notification-destroy []
-  (js-invoke (.. js/antd -notification) "destroy"))
-
-
-(defn notification-config [options]
-  (notification "config" options))
