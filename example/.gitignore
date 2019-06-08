@@ -6,3 +6,4 @@ resources/public/assets/
 
 .envrc
 *.iml
+pom.xml
