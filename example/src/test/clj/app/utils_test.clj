@@ -1,6 +1,6 @@
-(ns app.core-test
+(ns app.utils-test
   (:require [clojure.test :as t]
-            [app.core :as sut]))
+            [app.utils :as sut]))
 
 (t/deftest ^:unit square-test
   (t/testing "square test:"

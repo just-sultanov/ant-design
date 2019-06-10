@@ -43,5 +43,5 @@
 
 
 (mount/defstate server
-                :start (start)
-                :stop (stop server))
+  :start (start)
+  :stop (stop server))

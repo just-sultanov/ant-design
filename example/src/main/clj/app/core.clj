@@ -9,10 +9,6 @@
 ;; Helper functions
 ;;
 
-(defn square [x]
-  (* x x))
-
-
 (defn set-global-exception-hook []
   (Thread/setDefaultUncaughtExceptionHandler
     (reify Thread$UncaughtExceptionHandler

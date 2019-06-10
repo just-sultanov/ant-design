@@ -1,19 +1,18 @@
 (ns ^:figwheel-hooks app.ui.test-runner
-  (:require [goog.object :as gobj]
-            [cljs-test-display.core :as test-display]
-            [cljs.test :refer-macros [run-tests]]
-            [figwheel.main.testing :refer [run-tests-async]]
-            [app.ui.core-test]))
-
-(defn -main [& args]
-  (run-tests-async 3000))
-
+  (:require [cljs.test :refer-macros [run-tests]]
+            [figwheel.main.testing :refer-macros [run-tests-async]]
+            [cljs-test-display.core :as td]
+            [app.ui.utils-test]))
 
 (defn ^:after-load run []
-  (when (= "/tests.html"
-           (gobj/getValueByKeys goog/global "location" "pathname"))
-    (run-tests
-      (test-display/init! "root")
-      'app.ui.core-test)))
+  (run-tests
+    (td/init! "test-root")
+    'app.ui.utils-test))
 
-(run)
+
+(defn ^:export init []
+  (run))
+
+
+(defn -main [& args]
+  (run-tests-async 5000))

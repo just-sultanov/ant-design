@@ -1,8 +1,8 @@
-(ns app.ui.core-test
+(ns app.ui.utils-test
   (:require [cljs.test :refer-macros [deftest is testing]]
-            [app.ui.core :as sut]))
+            [app.ui.utils :as sut]))
 
-(deftest ^:unit square-test
+(deftest test-square
   (testing "square test:"
     (testing "expected 4"
       (let [expected 4

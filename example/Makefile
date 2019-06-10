@@ -10,9 +10,9 @@ clean: ## Clean
 	@echo ==========================
 	@echo = Clean
 	@echo ==========================
-	@rm -rf resources/public/assets/
-	@rm -rf target
-	@rm -rf logs
+	rm -rf resources/public/assets/
+	rm -rf target
+	rm -rf logs
 
 
 assets: ## Build assets
@@ -26,6 +26,8 @@ repl: ## Run REPL
 	@echo ==========================
 	@echo = Run REPL
 	@echo ==========================
+	@make -s clean
+	@make -s assets
 	@clojure -R:figwheel -A:repl
 
 
@@ -61,10 +63,6 @@ run: ## Run application
 	@clojure -A:run
 
 
-##
-# Tests
-##
-
 test-ui: ## Run UI tests
 	@echo ==========================
 	@echo = Run UI tests
@@ -79,16 +77,16 @@ test-backend: ## Run backend tests
 	@./bin/kaocha
 
 
-test-all: ## Run all tests
-	@make -s test-ui
-	@make -s test-backend
-
-
 test-watch: ## Watch backend tests
 	@echo ==========================
 	@echo = Watch backend tests
 	@echo ==========================
 	./bin/kaocha --watch
+
+
+test: ## Run all tests
+	@make -s test-ui
+	@make -s test-backend
 
 
 .PHONY: help
