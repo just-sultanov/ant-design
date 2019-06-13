@@ -1,9 +1,9 @@
 {:paths   ["src"]
- :deps    {org.clojure/clojure       {:mvn/version "1.10.1-beta2"}
+ :deps    {org.clojure/clojure       {:mvn/version "1.10.1"}
            org.clojure/clojurescript {:mvn/version "1.10.520"}
            reagent                   {:mvn/version "0.8.1"}
-           cljsjs/antd               {:mvn/version "3.16.4-0"}}
+           cljsjs/antd               {:mvn/version "3.19.0-0"}}
  :aliases {:build {:extra-deps {cambada {:mvn/version "1.0.4"}}
                    :main-opts  ["--main" "cambada.uberjar"
                                 "--app-artifact-id" "ant.design"
-                                "--app-version" "3.16.4-0"]}}}
+                                "--app-version" "3.19.0-0"]}}}
