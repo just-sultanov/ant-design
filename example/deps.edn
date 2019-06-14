@@ -8,17 +8,17 @@
                com.cognitect/transit-clj                  {:mvn/version "0.8.313"}
                com.cognitect/transit-cljs                 {:mvn/version "0.8.256"}
 
-               ;;;;
+               ;;
                ;; commons
-               ;;;;
+               ;;
 
                com.taoensso/sente                         {:mvn/version "1.13.1"}
                expound                                    {:mvn/version "0.7.2"}
 
 
-               ;;;;
+               ;;
                ;; backend
-               ;;;;
+               ;;
 
                http-kit                                   {:mvn/version "2.4.0-alpha4"}
                environ                                    {:mvn/version "1.1.0"}
@@ -36,19 +36,19 @@
                com.readytalk/metrics3-statsd              {:mvn/version "4.2.0"}
 
 
-               ;;;;
+               ;;
                ;; frontend
-               ;;;;
+               ;;
 
                reagent                                    {:mvn/version "0.8.1"
                                                            :exclusions  [cljsjs/react cljsjs/react-dom]}
                re-frame                                   {:mvn/version "0.10.6"}
-               ant.design                                 {:mvn/version "3.16.4-0"
-                                                           :exclusions  [cljsjs/react cljsjs/react-dom]}
+               ant.design                                 {:local/root "../"
+                                                           :exclusions [cljsjs/react cljsjs/react-dom]}
 
-               ;;;;
+               ;;
                ;; fixes
-               ;;;;
+               ;;
 
                ;; java 9+
                javax.xml.bind/jaxb-api                    {:mvn/version "2.3.1"}
