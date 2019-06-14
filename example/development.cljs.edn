@@ -1,5 +1,5 @@
 ;; figwheel options
-^{:watch-dirs       ["src/main/cljs" "src/test/cljs"]
+^{:watch-dirs       ["src/main/cljs" "src/test/cljs" "../src"]
   :css-dirs         ["resources/public/assets"]
   :auto-testing     true
   :extra-main-files {:tests {:main app.ui.test-runner}}
