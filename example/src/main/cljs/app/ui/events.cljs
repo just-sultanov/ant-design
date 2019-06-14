@@ -5,10 +5,12 @@
   ::init-db
   []
   (fn [_ _]
-    {:x 0}))
+    {:x 42}))
 
 
 (rf/reg-event-db
   ::update-x
-  (fn [db [_ f]]
-    (update db :x f)))
+  (fn [db [_ x]]
+    (cond
+      (number? x) (assoc db :x x)
+      (fn? x) (update db :x x))))

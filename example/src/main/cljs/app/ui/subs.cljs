@@ -4,4 +4,4 @@
 (rf/reg-sub
   ::x
   (fn [db]
-    (get db :x 0)))
+    (get db :x 42)))
