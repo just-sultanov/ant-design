@@ -89,4 +89,4 @@ test: ## Run all tests
 	@make -s test-backend
 
 
-.PHONY: help
+.PHONY: help clean build run test

@@ -52,7 +52,7 @@
        [ant/button {:style   {:margin-left "20px"}
                     :onClick #(rf/dispatch [::events/update-x inc])}
         "+"]
-       
+
        [:h1 {:style {:margin-top "40px"}}
         "simple form"]
        (forms/create {:options {:name "simple-form"}
