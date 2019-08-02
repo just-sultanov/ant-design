@@ -39,3 +39,8 @@
 (defn validate-fields [form & args]
   (let [validate-fn (:validateFields form)]
     (apply validate-fn (clj->js args))))
+
+
+(defn validate-fields-and-scroll [form & args]
+  (let [validate-fn (:validateFieldsAndScroll form)]
+    (apply validate-fn (clj->js args))))
