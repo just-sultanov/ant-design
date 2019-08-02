@@ -9,4 +9,4 @@
            :build {:extra-deps {cambada {:mvn/version "1.0.4"}}
                    :main-opts  ["--main" "cambada.uberjar"
                                 "--app-artifact-id" "ant.design"
-                                "--app-version" "3.19.8-0"]}}}
+                                "--app-version" "3.20.6-0"]}}}
