@@ -83,6 +83,7 @@
 (def radio-button (component "Radio.Button"))
 (def radio-group (component "Radio.Group"))
 (def rate (component "Rate"))
+(def result (component "Result"))
 (def row (component "Row"))
 (def select (component "Select"))
 (def select-opt-group (component "Select.OptGroup"))
