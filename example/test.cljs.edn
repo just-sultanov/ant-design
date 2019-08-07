@@ -1,5 +1,0 @@
-;; figwheel options
-^{:launch-js "./bin/chromium"}
-
-;; compiler options
-{:main app.ui.test-runner}

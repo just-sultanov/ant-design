@@ -1,9 +1,0 @@
-.cpcache/
-.idea/
-logs/
-node_modules/
-resources/public/assets/
-
-.envrc
-*.iml
-pom.xml
