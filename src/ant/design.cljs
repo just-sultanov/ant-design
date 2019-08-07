@@ -20,6 +20,7 @@
 (def badge (component "Badge"))
 (def breadcrumb (component "Breadcrumb"))
 (def breadcrumb-item (component "Breadcrumb.Item"))
+(def breadcrumb-separator (component "Breadcrumb.Separator"))
 (def button (component "Button"))
 (def button-group (component "Button.Group"))
 (def calendar (component "Calendar"))
