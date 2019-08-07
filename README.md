@@ -12,11 +12,33 @@ Add the following project dependency:
 
 ```clojure
 ;; project.clj or build.boot
-[ant.design "3.20.6-0"]
+[ant.design "3.21.1-0"]
 
 ;; deps.edn
-{:deps {ant.design {:mvn/version "3.20.6-0"}}}
+{:deps {ant.design {:mvn/version "3.21.1-0"}}}
 ```
+
+
+
+#### Usage
+
+```clojure
+(ns example
+  (:require [ant.design :as ant]))
+
+(defn my-button []
+  [ant/button {:onClick #(js/console.log "Amazing...")}
+    "Click me"])
+```
+
+
+
+#### Changelog
+
+##### 3.21.1-0
+- antd library updated to [v3.21.1](https://ant.design/changelog#3.21.1)
+- added new component `breadcrumb-separator`
+
 
 
 #### License
