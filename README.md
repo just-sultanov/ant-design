@@ -12,10 +12,10 @@ Add the following project dependency:
 
 ```clojure
 ;; project.clj or build.boot
-[ant.design "3.21.1-0"]
+[ant.design "3.22.0-0"]
 
 ;; deps.edn
-{:deps {ant.design {:mvn/version "3.21.1-0"}}}
+{:deps {ant.design {:mvn/version "3.22.0-0"}}}
 ```
 
 
@@ -23,7 +23,7 @@ Add the following project dependency:
 #### Usage
 
 ```clojure
-(ns example
+(ns example.app
   (:require [ant.design :as ant]))
 
 (defn my-button []
@@ -35,9 +35,16 @@ Add the following project dependency:
 
 #### Changelog
 
-##### 3.21.1-0
+##### v3.22.0-0
+- antd library updated to [v3.22.0](https://ant.design/changelog#3.22.0)
+
+##### v3.21.1-0
 - antd library updated to [v3.21.1](https://ant.design/changelog#3.21.1)
 - added new component `breadcrumb-separator`
+
+##### v3.19.0-0
+- antd library updated to [v3.19.0](https://ant.design/changelog#3.19.0)
+- added new components `mentions`, `descriptions`
 
 
 
