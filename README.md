@@ -12,10 +12,10 @@ Add the following project dependency:
 
 ```clojure
 ;; project.clj or build.boot
-[ant.design "3.22.0-0"]
+[ant.design "3.22.0-1"]
 
 ;; deps.edn
-{:deps {ant.design {:mvn/version "3.22.0-0"}}}
+{:deps {ant.design {:mvn/version "3.22.0-1"}}}
 ```
 
 
@@ -35,15 +35,18 @@ Add the following project dependency:
 
 #### Changelog
 
+##### v3.22.0-1
+- deps are explicitly indicated
+
 ##### v3.22.0-0
-- antd library updated to [v3.22.0](https://ant.design/changelog#3.22.0)
+- antd library updated to [v3.22.0][v3.22.0]
 
 ##### v3.21.1-0
-- antd library updated to [v3.21.1](https://ant.design/changelog#3.21.1)
+- antd library updated to [v3.21.1][v3.21.1]
 - added new component `breadcrumb-separator`
 
 ##### v3.19.0-0
-- antd library updated to [v3.19.0](https://ant.design/changelog#3.19.0)
+- antd library updated to [v3.19.0][v3.19.0]
 - added new components `mentions`, `descriptions`
 
 
@@ -51,3 +54,9 @@ Add the following project dependency:
 #### License
 
 Copyright © 2019 Ilshat Sultanov
+
+
+
+[v3.22.0]: https://ant.design/changelog#3.22.0
+[v3.21.1]: https://ant.design/changelog#3.21.1
+[v3.19.0]: https://ant.design/changelog#3.19.0
