@@ -5,7 +5,19 @@
            reagent                   {:mvn/version "0.8.1"}
            cljsjs/antd               {:mvn/version "3.22.0-0"}}
 
- :aliases {:build {:extra-deps {cambada {:mvn/version "1.0.4"}}
-                   :main-opts  ["--main" "cambada.uberjar"
-                                "--app-artifact-id" "ant.design"
-                                "--app-version" "3.22.0-1"]}}}
+ :aliases {:repl    {:extra-deps {nrepl            {:mvn/version "0.6.0"}
+                                  cider/piggieback {:mvn/version "0.4.2"}}
+                     :main-opts  ["--main" "nrepl.cmdline"
+                                  "--port" "7888"
+                                  "--middleware" "[cider.piggieback/wrap-cljs-repl]"]}
+
+           :version {:extra-deps {com.workframe/garamond {:mvn/version "0.4.0"}}
+                     :main-opts  ["-m" "garamond.main"]}
+
+           :build   {:extra-deps {cambada {:mvn/version "1.0.7"}}
+                     :main-opts  ["--main" "cambada.jar"
+                                  "--app-artifact-id" "ant.design"]}
+
+           :deploy  {:extra-deps {deps-deploy {:mvn/version "0.0.9"}}
+                     :main-opts  ["--main" "deps-deploy.deps-deploy"
+                                  "deploy" "target/ant.design.jar"]}}}
