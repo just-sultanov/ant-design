@@ -11,14 +11,13 @@ help: ## Show help
 
 
 clean: ## Clean
-	rm -f pom.xml && rm -rf target
+	mvn clean
 
 
 build: clean ## Build jar
 	clojure -A:build
-	clojure -Spom
 	clojure -A:version --pom --scm-url ${SCM_URL}
-	mv target/ant.design*.jar target/ant.design-$(shell clojure -A:version --prefix "").jar
+	mv target/ant.design*.jar target/ant.design.jar
 
 
 patch: ## Increment patch version
@@ -34,8 +33,6 @@ major: ## Increment major version
 
 
 deploy: build ## Deploy to clojars
-	mvn deploy \
-	-DdeployOnly \
-	-DaltDeploymentRepository=clojars::default::https://repo.clojars.org/ \
-	-Drepo.login=${CLOJARS_USERNAME} \
-	-Drepo.pwd=${CLOJARS_PASSWORD}
+	echo "<settings><servers><server><id>clojars</id><username>${CLOJARS_USERNAME}</username><password>${CLOJARS_PASSWORD}</password></server></servers></settings>" \
+	> ~/.m2/settings.xml
+	mvn deploy
