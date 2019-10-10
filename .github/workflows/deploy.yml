@@ -19,7 +19,7 @@ jobs:
         with:
           tools-deps: '1.10.1.469'
       - name: Deploy to clojars
-        run: clojure -A:build
+        run: make build
         env:
           CLOJARS_USERNAME: ${{ secrets.CLOJARS_USERNAME }}
           CLOJARS_PASSWORD: ${{ secrets.CLOJARS_PASSWORD }}
