@@ -18,7 +18,7 @@ build: clean ## Build jar
 	clojure -A:build
 	clojure -Spom
 	clojure -A:version --pom --scm-url ${SCM_URL}
-	mv target/ant.design*.jar target/ant.design.jar
+	mv target/ant.design*.jar target/ant.design-$(shell clojure -A:version --prefix "").jar
 
 
 patch: ## Increment patch version
@@ -35,6 +35,7 @@ major: ## Increment major version
 
 deploy: build ## Deploy to clojars
 	mvn deploy \
+	-DdeployOnly \
 	-DaltDeploymentRepository=clojars::default::https://repo.clojars.org/ \
 	-Drepo.login=${CLOJARS_USERNAME} \
 	-Drepo.pwd=${CLOJARS_PASSWORD}
