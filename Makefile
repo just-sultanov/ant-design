@@ -21,18 +21,18 @@ build: clean ## Build jar
 
 
 patch: ## Increment patch version
-	clojure -A:version patch --tag --message ${TAG_MSG} --pom --scm-url ${SCM_URL}
+	clojure -A:version patch --tag --message ${TAG_MSG}
 
 
 minor: ## Increment minor version
-	clojure -A:version minor --tag --message ${TAG_MSG} --pom --scm-url ${SCM_URL}
+	clojure -A:version minor --tag --message ${TAG_MSG}
 
 
 major: ## Increment major version
-	clojure -A:version major --tag --message ${TAG_MSG} --pom --scm-url ${SCM_URL}
+	clojure -A:version major --tag --message ${TAG_MSG}
 
 
-deploy: build patch ## Deploy to clojars
+deploy: build ## Deploy to clojars
 	CLOJARS_USERNAME=${CLOJARS_USERNAME} \
 	CLOJARS_PASSWORD=${CLOJARS_PASSWORD} \
 	clojure -A:deploy
