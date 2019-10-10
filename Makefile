@@ -32,10 +32,11 @@ major: ## Increment major version
 
 
 tag: ## Create a new git tag based on the given version
-	clojure -A:version --tag
+	clojure -A:version --pom --tag
 
 
 deploy: build ## Deploy to clojars
+	sleep 10
 	CLOJARS_USERNAME=${CLOJARS_USERNAME} \
 	CLOJARS_PASSWORD=${CLOJARS_PASSWORD} \
 	clojure -A:deploy
