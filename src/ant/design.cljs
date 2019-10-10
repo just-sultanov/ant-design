@@ -1,8 +1,9 @@
 (ns ant.design
   "A ClojureScript library for Ant Design."
   (:refer-clojure :exclude [comment empty list])
-  (:require [cljsjs.antd]
-            [ant.design.utils :refer [component]]))
+  (:require
+    [cljsjs.antd]
+    [ant.design.utils :refer [component]]))
 
 ;;
 ;; Components API
@@ -64,9 +65,9 @@
 (def list (component "List"))
 (def list-item (component "List.Item"))
 (def list-item-meta (component "List.Item.Meta"))
-(def locale-provider (component "LocaleProvider"))
-(def mention (component "Mention"))
-(def mention-nav (component "Mention.Nav"))
+(def ^:deprecated locale-provider (component "LocaleProvider"))
+(def ^:deprecated mention (component "Mention"))
+(def ^:deprecated mention-nav (component "Mention.Nav"))
 (def mentions (component "Mentions"))
 (def mentions-option (component "Mentions.Option"))
 (def menu (component "Menu"))
