@@ -16,7 +16,7 @@ clean: ## Clean
 
 build: clean ## Build jar
 	clojure -A:build
-	clojure -A:version --group-id "" --artifact-id "ant.design" --pom --scm-url ${SCM_URL}
+	clojure -A:version --pom --scm-url ${SCM_URL}
 	mv target/ant.design*.jar target/ant.design.jar
 
 
@@ -33,6 +33,7 @@ major: ## Increment major version
 
 
 deploy: build ## Deploy to clojars
-	CLOJARS_USERNAME=${CLOJARS_USERNAME} \
-	CLOJARS_PASSWORD=${CLOJARS_PASSWORD} \
-	clojure -A:deploy
+	mvn deploy \
+	-DaltDeploymentRepository=clojars::default::https://repo.clojars.org/ \
+	-Drepo.login=${CLOJARS_USERNAME} \
+	-Drepo.pwd=${CLOJARS_PASSWORD}
