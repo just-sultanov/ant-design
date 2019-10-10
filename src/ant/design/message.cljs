@@ -5,13 +5,16 @@
      - To provide feedback such as success, warning, error etc
      - A message is displayed at top and center and will be dismissed
        automatically, as a non-interrupting light-weighted prompt"
-  (:require [ant.design.utils :refer [apply-fn]]))
+  (:require
+    [ant.design.utils :refer [apply-fn]]))
 
 ;;
 ;; Helper functions
 ;;
 
-(defn- message [& args]
+(defn- message
+  "Invokes `message` function to the given args"
+  [& args]
   (apply apply-fn "message" args))
 
 

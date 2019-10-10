@@ -9,13 +9,16 @@
          Or it may show some details about upcoming steps the user may have
          to follow
        - A notification that is pushed by the application"
-  (:require [ant.design.utils :refer [apply-fn]]))
+  (:require
+    [ant.design.utils :refer [apply-fn]]))
 
 ;;
 ;; Helper functions
 ;;
 
-(defn- notification [& args]
+(defn- notification
+  "Invokes `notification` function to the given args"
+  [& args]
   (apply apply-fn "notification" args))
 
 
@@ -56,11 +59,11 @@
                 (name level)
                 "info")
         props (cond-> config
-                      (or (pos? duration)
-                          (zero? duration)) (assoc :duration duration)
-                      (fn? on-click) (assoc :onClick on-click)
-                      (fn? on-close) (assoc :onClose on-close)
-                      :always (dissoc :level))]
+                (or (pos? duration)
+                    (zero? duration)) (assoc :duration duration)
+                (fn? on-click) (assoc :onClick on-click)
+                (fn? on-close) (assoc :onClose on-close)
+                :always (dissoc :level))]
     (notification level props)))
 
 
