@@ -16,6 +16,7 @@ clean: ## Clean
 
 build: clean ## Build jar
 	clojure -A:build
+	clojure -Spom
 	clojure -A:version --pom --scm-url ${SCM_URL}
 	mv target/ant.design*.jar target/ant.design.jar
 
