@@ -32,7 +32,7 @@ major: ## Increment major version
 
 
 tag: ## Create a new git tag based on the given version
-	clojure -A:version --pom --tag
+	clojure -A:version --pom --tag --message "release a new version"
 
 
 deploy: build ## Deploy to clojars
