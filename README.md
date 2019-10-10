@@ -33,6 +33,19 @@ Add the following dependency in your project:
 
 
 
+#### Deploy
+
+```bash
+# create a new git tag (available types `minor`, `major`)
+$ make patch
+
+# push a new git tag to Github then wait for GitHub Actions
+# start to deploy the new version to clojars
+$ git push origin --tags  
+```
+
+
+
 #### Changelog
 
 ##### v4.0.0
