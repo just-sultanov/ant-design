@@ -21,23 +21,18 @@ build: clean ## Build jar
 
 
 patch: ## Increment patch version
-	clojure -A:version patch --pom --scm-url ${SCM_URL}
+	clojure -A:version patch --tag --message ${TAG_MSG} --pom --scm-url ${SCM_URL}
 
 
 minor: ## Increment minor version
-	clojure -A:version minor --pom --scm-url ${SCM_URL}
+	clojure -A:version minor --tag --message ${TAG_MSG} --pom --scm-url ${SCM_URL}
 
 
 major: ## Increment major version
-	clojure -A:version major --pom --scm-url ${SCM_URL}
-
-
-tag: ## Create a new git tag based on the given version
-	clojure -A:version --tag --message ${TAG_MSG}
+	clojure -A:version major --tag --message ${TAG_MSG} --pom --scm-url ${SCM_URL}
 
 
 deploy: build patch ## Deploy to clojars
 	CLOJARS_USERNAME=${CLOJARS_USERNAME} \
 	CLOJARS_PASSWORD=${CLOJARS_PASSWORD} \
 	clojure -A:deploy
-	make tag
