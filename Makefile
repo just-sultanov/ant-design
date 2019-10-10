@@ -1,4 +1,9 @@
+.PHONY: help
 .DEFAULT_GOAL := help
+
+SHELL = bash
+
+SCM_URL=https://github.com/just-sultanov/ant-design
 
 
 help: ## Show help
@@ -6,19 +11,34 @@ help: ## Show help
 
 
 clean: ## Clean
-	@mvn clean
+	rm -f pom.xml && rm -rf target
 
 
-build: ## Build uberjar
-	@clj -Abuild
+build: clean ## Build jar
+	clojure -A:build
+	mv target/ant.design*.jar target/ant.design.jar
 
 
-pom: ## Generate pom.xml
-	@clj -Spom
+patch: ## Increment patch version
+	clojure -A:version patch --pom --scm-url ${SCM_URL}
 
 
-deploy: ## Deploy to clojars
-	@mvn deploy
+minor: ## Increment minor version
+	clojure -A:version minor --pom --scm-url ${SCM_URL}
 
 
-.PHONY: clean build pom deploy
+major: ## Increment major version
+	clojure -A:version major --pom --scm-url ${SCM_URL}
+
+
+tag: ## Create a new git tag based on the given version
+	clojure -A:version --tag
+
+
+deploy: build ## Deploy to clojars
+	CLOJARS_USERNAME=${CLOJARS_USERNAME} \
+	CLOJARS_PASSWORD=${CLOJARS_PASSWORD} \
+	clojure -A:deploy
+
+
+release: deploy tag ## Release a new version
