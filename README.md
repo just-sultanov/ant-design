@@ -1,4 +1,4 @@
-[![Clojars Project](https://img.shields.io/clojars/v/ant.design.svg)](https://clojars.org/ant.design)
+[![Clojars Project](https://img.shields.io/clojars/v/ant-design/ant.design.svg)](https://clojars.org/ant-design/ant.design)
 [![GitHub License](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE)
 
 # ant.design
@@ -12,10 +12,10 @@ Add the following dependency in your project:
 
 ```clojure
 ;; project.clj or build.boot
-[ant.design "RELEASE"]
+[ant.design/ant.design "RELEASE"]
 
 ;; deps.edn
-{:deps {ant.design {:mvn/version "RELEASE"}}}
+{:deps {ant.design/ant.design {:mvn/version "RELEASE"}}}
 ```
 
 
@@ -47,6 +47,11 @@ $ git push origin --tags
 
 
 #### Changelog
+
+
+##### v5.0.0
+- added automated releases with Github Actions
+- changed artifact coordinates
 
 ##### v4.0.0
 - the library version is now independent of the `antd` library version
