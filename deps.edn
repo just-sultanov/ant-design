@@ -16,4 +16,8 @@
 
            :build   {:extra-deps {cambada {:mvn/version "1.0.7"}}
                      :main-opts  ["--main" "cambada.jar"
-                                  "--app-artifact-id" "ant.design"]}}}
+                                  "--app-artifact-id" "ant.design"]}
+
+           :deploy  {:extra-deps {deps-deploy {:mvn/version "0.0.9"}}
+                     :main-opts  ["--main" "deps-deploy.deps-deploy"
+                                  "deploy" "target/ant.design.jar"]}}}

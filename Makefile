@@ -11,7 +11,7 @@ help: ## Show help
 
 
 clean: ## Clean
-	mvn clean
+	rm -f pom.xml && rm -rf target
 
 
 build: clean ## Build jar
@@ -33,6 +33,4 @@ major: ## Increment major version
 
 
 deploy: build ## Deploy to clojars
-	echo "<settings><servers><server><id>clojars</id><username>${CLOJARS_USERNAME}</username><password>${CLOJARS_PASSWORD}</password></server></servers></settings>" \
-	> ~/.m2/settings.xml
-	mvn deploy
+	clojure -A:deploy
