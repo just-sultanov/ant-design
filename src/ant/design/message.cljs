@@ -63,13 +63,13 @@
         props    (case callback
                    :one [level content duration on-close]
                    :both [level content duration on-close after-close]
-                   :none [level content duration])]
-    (let [promise (->> props
-                       (remove nil?)
-                       (apply message))]
-      (if-not (= :both callback)
-        promise
-        (.then promise after-close)))))
+                   :none [level content duration])
+        promise  (->> props
+                      (remove nil?)
+                      (apply message))]
+    (if-not (= :both callback)
+      promise
+      (.then promise after-close))))
 
 
 (defn destroy
