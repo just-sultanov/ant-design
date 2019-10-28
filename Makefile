@@ -4,6 +4,8 @@
 SHELL = bash
 
 SCM_URL="https://github.com/just-sultanov/ant-design"
+GROUP_ID=ant.design
+ARTIFACT_ID=ant.design
 TAG_MSG="release a new version"
 
 help: ## Show help
@@ -35,7 +37,7 @@ build: ## Build jar
 	@echo "Build..."
 	@echo "=================================================================="
 	clojure -A:build
-	clojure -A:version --pom --scm-url ${SCM_URL}
+	clojure -A:version --pom --group-id ${GROUP_ID} --artifact-id ${ARTIFACT_ID} --scm-url ${SCM_URL}
 	@echo -e "\n"
 
 
