@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Run linter
-        run: clj-kondo --lint src:test
+        run: clj-kondo --lint src
 
   deploy:
     needs: lint
