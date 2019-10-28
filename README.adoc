@@ -64,6 +64,10 @@ deploy                         Deploy to clojars
 
 === Changelog
 
+==== v5.0.3
+
+* fixed clj-kondo warnings
+
 ==== v5.0.1
 
 * antd library updated to https://ant.design/changelog#3.23.4[v3.23.4]
