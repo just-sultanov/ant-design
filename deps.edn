@@ -3,7 +3,7 @@
  :deps    {org.clojure/clojure       {:mvn/version "1.10.1"}
            org.clojure/clojurescript {:mvn/version "1.10.520"}
            reagent                   {:mvn/version "0.8.1"}
-           cljsjs/antd               {:mvn/version "3.22.0-0"}}
+           cljsjs/antd               {:mvn/version "3.23.4-0"}}
 
  :aliases {:repl    {:extra-deps {nrepl            {:mvn/version "0.6.0"}
                                   cider/piggieback {:mvn/version "0.4.2"}}
@@ -11,12 +11,11 @@
                                   "--port" "7888"
                                   "--middleware" "[cider.piggieback/wrap-cljs-repl]"]}
 
+           :build   {:extra-deps {seancorfield/depstar {:mvn/version "0.3.4"}}
+                     :main-opts  ["--main" "hf.depstar.jar" "target/ant.design.jar"]}
+
            :version {:extra-deps {com.workframe/garamond {:mvn/version "0.4.0"}}
                      :main-opts  ["-m" "garamond.main"]}
-
-           :build   {:extra-deps {cambada {:mvn/version "1.0.7"}}
-                     :main-opts  ["--main" "cambada.jar"
-                                  "--app-artifact-id" "ant.design"]}
 
            :deploy  {:extra-deps {deps-deploy {:mvn/version "0.0.9"}}
                      :main-opts  ["--main" "deps-deploy.deps-deploy"

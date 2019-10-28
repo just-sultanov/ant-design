@@ -10,14 +10,37 @@ help: ## Show help
 	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 
 
+repl: ## Run nREPL
+	clj -A:repl
+
+
 clean: ## Clean
+	@echo "=================================================================="
+	@echo "Clean..."
+	@echo "=================================================================="
 	rm -f pom.xml && rm -rf target
+	@echo -e "\n"
 
 
-build: clean ## Build jar
+lint: ## Run linter
+	@echo "=================================================================="
+	@echo "Run linter..."
+	@echo "=================================================================="
+	clj-kondo --lint src:test
+	@echo -e "\n"
+
+
+build: ## Build jar
+	@echo "=================================================================="
+	@echo "Build..."
+	@echo "=================================================================="
 	clojure -A:build
 	clojure -A:version --pom --scm-url ${SCM_URL}
-	mv target/ant.design*.jar target/ant.design.jar
+	@echo -e "\n"
+
+
+init: ## Init first version
+	git tag --annotate --message ${TAG_MSG} v0.1.0
 
 
 patch: ## Increment patch version
@@ -32,5 +55,9 @@ major: ## Increment major version
 	clojure -A:version major --tag --message ${TAG_MSG}
 
 
-deploy: build ## Deploy to clojars
+deploy: ## Deploy to clojars
+	@echo "=================================================================="
+	@echo "Deploy..."
+	@echo "=================================================================="
 	clojure -A:deploy
+	@echo -e "\n"
