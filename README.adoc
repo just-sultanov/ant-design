@@ -64,6 +64,15 @@ deploy                         Deploy to clojars
 
 === Changelog
 
+==== v5.1.0
+
+* antd library updated to https://ant.design/changelog#3.24.3[v3.24.3]
+* reverted artifact coordinates
+* removed deprecated components:
+** `mention`
+** `mention-nav`
+** `locale-provider`
+
 ==== v5.0.3
 
 * fixed clj-kondo warnings
