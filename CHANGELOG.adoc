@@ -1,0 +1,68 @@
+== Changelog
+
+=== v5.1.0
+
+* antd library updated to https://ant.design/changelog#3.24.3[v3.24.3]
+* reverted artifact coordinates
+* removed deprecated components:
+** `mention`
+** `mention-nav`
+** `locale-provider`
+
+=== v5.0.3
+
+* fixed clj-kondo warnings
+
+=== v5.0.1
+
+* antd library updated to https://ant.design/changelog#3.23.4[v3.23.4]
+* migrated from cambada to depstar
+
+=== v5.0.0
+
+* added automated releases with Github Actions
+* changed artifact coordinates
+
+=== v4.0.0
+
+* the library version is now independent of the `antd` library version
+* added new libraries for automation
+** com.workframe/garamond 0.4.0
+** deps-deploy 0.0.9
+* cambada library updated to 1.0.7
+* deprecated components:
+** `mention`
+** `mention-nav`
+** `locale-provider`
+* added form functions:
+** `get-field-decorator`
+** `get-field-error`
+** `get-fields-error`
+** `get-field-value`
+** `get-fields-value`
+** `field-touched?`
+** `fields-touched?`
+** `field-validating?`
+** `reset-fields`
+** `set-fields`
+** `set-fields-value`
+** `validate-fields`
+** `validate-fields-and-scroll`
+
+=== v3.22.0-1
+
+* deps are explicitly indicated
+
+=== v3.22.0-0
+
+* antd library updated to https://ant.design/changelog#3.22.0[v3.22.0]
+
+=== v3.21.1-0
+
+* antd library updated to https://ant.design/changelog#3.21.1[v3.21.1]
+* added new component `breadcrumb-separator`
+
+=== v3.19.0-0
+
+* antd library updated to https://ant.design/changelog#3.19.0[v3.19.0]
+* added new components `mentions`, `descriptions`
