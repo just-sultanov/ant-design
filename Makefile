@@ -41,6 +41,14 @@ build: ## Build jar
 	@echo -e "\n"
 
 
+install: ## Install locally
+	@echo "=================================================================="
+	@echo "Install locally..."
+	@echo "=================================================================="
+	mvn install:install-file -Dfile=target/ant.design.jar -DpomFile=pom.xml
+	@echo -e "\n"
+
+
 init: ## Init first version
 	git tag --annotate --message ${TAG_MSG} v0.1.0
 
