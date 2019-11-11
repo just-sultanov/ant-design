@@ -4,6 +4,14 @@ on:
   push:
     tags:
       - '*'
+    paths-ignore:
+      - "docs/**"
+      - ".editorconfig"
+      - ".gitignore"
+      - "CHANGELOG.adoc"
+      - "LICENSE"
+      - "Makefile"
+      - "README.adoc"
 
 jobs:
   lint:
