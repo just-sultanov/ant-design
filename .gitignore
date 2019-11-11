@@ -1,5 +1,6 @@
 .cpcache/
 .idea/
 target/
+*.jar
 *.iml
 pom.xml
