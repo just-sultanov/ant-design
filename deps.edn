@@ -12,11 +12,15 @@
                                   "--middleware" "[cider.piggieback/wrap-cljs-repl]"]}
 
            :build   {:extra-deps {seancorfield/depstar {:mvn/version "0.3.4"}}
-                     :main-opts  ["--main" "hf.depstar.jar" "target/ant.design.jar"]}
+                     :main-opts  ["--main" "hf.depstar.jar" "ant.design.jar"]}
 
            :version {:extra-deps {com.workframe/garamond {:mvn/version "0.4.0"}}
                      :main-opts  ["-m" "garamond.main"]}
 
+           :install {:extra-deps {deps-deploy {:mvn/version "0.0.9"}}
+                     :main-opts  ["-m" "deps-deploy.deps-deploy"
+                                  "install" "ant.design.jar"]}
+
            :deploy  {:extra-deps {deps-deploy {:mvn/version "0.0.9"}}
                      :main-opts  ["--main" "deps-deploy.deps-deploy"
-                                  "deploy" "target/ant.design.jar"]}}}
+                                  "deploy" "ant.design.jar"]}}}

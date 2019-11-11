@@ -20,7 +20,7 @@ clean: ## Clean
 	@echo "=================================================================="
 	@echo "Clean..."
 	@echo "=================================================================="
-	rm -f pom.xml && rm -rf target
+	rm -rf pom.xml ant.design.jar target
 	@echo -e "\n"
 
 
@@ -45,7 +45,7 @@ install: ## Install locally
 	@echo "=================================================================="
 	@echo "Install locally..."
 	@echo "=================================================================="
-	mvn install:install-file -Dfile=target/ant.design.jar -DpomFile=pom.xml
+	clojure -A:install
 	@echo -e "\n"
 
 
