@@ -8,12 +8,13 @@ on:
 jobs:
   lint:
     runs-on: ubuntu-latest
-    container:
-      image: borkdude/clj-kondo
     steps:
       - uses: actions/checkout@v1
       - name: Run linter
-        run: clj-kondo --lint src
+        uses: DeLaGuardo/clojure-lint-action@v1
+        with:
+          clj-kondo-args: --lint src
+          github_token: ${{ secrets.GITHUB_TOKEN }}
 
   deploy:
     needs: lint
@@ -31,7 +32,7 @@ jobs:
           java-version: '13'
 
       - name: Setup clojure
-        uses: DeLaGuardo/setup-clojure@1.0
+        uses: DeLaGuardo/setup-clojure@2.0
         with:
           tools-deps: '1.10.1.469'
 
