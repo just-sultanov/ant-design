@@ -20,7 +20,7 @@ clean: ## Clean
 	@echo "=================================================================="
 	@echo "Clean..."
 	@echo "=================================================================="
-	rm -rf pom.xml ant.design.jar target
+	rm -rf pom.xml ant.design.jar target trace.edn
 	@echo -e "\n"
 
 
