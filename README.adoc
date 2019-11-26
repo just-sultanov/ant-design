@@ -4,7 +4,7 @@ image:https://img.shields.io/clojars/v/ant.design.svg[Clojars, link=https://cloj
 
 == ant.design
 
-A ClojureScript library for https://ant.design[Ant Design]
+A ClojureScript library for https://ant.design[Ant Design].
 
 === Quick Start Guide
 

@@ -1,8 +1,14 @@
 == Changelog
 
+=== v6.1.2
+
+* antd library updated to https://ant.design/changelog#3.25.3[v3.25.3]
+
 === v6.1.1
 
 * antd library updated to https://ant.design/changelog#3.25.2[v3.25.2]
+* clojurescript library updated to 1.10.597
+* reagent library updated to 0.9.0-rc3
 
 === v6.1.0
 
