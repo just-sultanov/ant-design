@@ -2,8 +2,8 @@
 
  :deps    {org.clojure/clojure       {:mvn/version "1.10.1"}
            org.clojure/clojurescript {:mvn/version "1.10.597"}
-           reagent                   {:mvn/version "0.9.0-rc3"}
-           cljsjs/antd               {:mvn/version "3.25.3-0"}}
+           reagent                   {:mvn/version "0.9.0-rc4"}
+           cljsjs/antd               {:mvn/version "3.26.4-0"}}
 
  :aliases {:repl    {:extra-deps {nrepl            {:mvn/version "0.6.0"}
                                   cider/piggieback {:mvn/version "0.4.2"}}
