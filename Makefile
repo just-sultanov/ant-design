@@ -65,6 +65,13 @@ major: ## Increment major version
 	clojure -A:version major --tag --message ${TAG_MSG}
 
 
+release: ## Release a new version
+	@echo "=================================================================="
+	@echo "Release a new version..."
+	@echo "=================================================================="
+	git push origin --tags
+
+
 deploy: ## Deploy to clojars
 	@echo "=================================================================="
 	@echo "Deploy..."
