@@ -37,12 +37,12 @@ jobs:
           tools-deps: latest
 
       - name: Cache clojure deps
-          uses: actions/cache@v1
-          with:
-            path: ~/.m2/repository
-            key: clojure-${{ hashFiles('**/deps.edn') }}
-            restore-keys: |
-              clojure-
+        uses: actions/cache@v1
+        with:
+          path: ~/.m2/repository
+          key: clojure-${{ hashFiles('**/deps.edn') }}
+          restore-keys: |
+            clojure-
 
       - name: Run clean
         run: make clean
