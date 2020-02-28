@@ -2,6 +2,10 @@ image:https://img.shields.io/github/license/just-sultanov/ant-design[License,lin
 image:https://github.com/just-sultanov/ant-design/workflows/deploy/badge.svg[Deploy]
 image:https://img.shields.io/clojars/v/ant.design.svg[Clojars, link=https://clojars.org/ant.design]
 
+*Important*:
+This library only supports antd v3. Use `shadow-cljs` or another library since antd v4.
+
+
 == ant.design
 
 A ClojureScript library for https://ant.design[Ant Design].
