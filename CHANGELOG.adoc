@@ -1,23 +1,30 @@
+:v3: https://github.com/ant-design/ant-design/blob/3.x-stable/CHANGELOG.en-US.md
 == Changelog
+
+=== v6.2.1
+
+* antd library updated to {v3}[v3.26.12]
+* reagent library updated to 0.9.1
+* seancorfield/depstar library updated to 0.5.2
 
 === v6.2.0
 
-* antd library updated to https://ant.design/changelog#3.26.5[v3.26.5]
+* antd library updated to {v3}[v3.26.5]
 * reagent library updated to 0.9.0-rc4
 
 === v6.1.2
 
-* antd library updated to https://ant.design/changelog#3.25.3[v3.25.3]
+* antd library updated to {v3}[v3.25.3]
 
 === v6.1.1
 
-* antd library updated to https://ant.design/changelog#3.25.2[v3.25.2]
+* antd library updated to {v3}[v3.25.2]
 * clojurescript library updated to 1.10.597
 * reagent library updated to 0.9.0-rc3
 
 === v6.1.0
 
-* antd library updated to https://ant.design/changelog#3.25.1[v3.25.1]
+* antd library updated to {v3}[v3.25.1]
 
 === v6.0.0
 
@@ -25,7 +32,7 @@
 
 === v5.1.0
 
-* antd library updated to https://ant.design/changelog#3.24.3[v3.24.3]
+* antd library updated to {v3}[v3.24.3]
 * reverted artifact coordinates
 * removed deprecated components:
 ** `mention`
@@ -38,7 +45,7 @@
 
 === v5.0.1
 
-* antd library updated to https://ant.design/changelog#3.23.4[v3.23.4]
+* antd library updated to {v3}[v3.23.4]
 * migrated from cambada to depstar
 
 === v5.0.0
@@ -78,14 +85,14 @@
 
 === v3.22.0-0
 
-* antd library updated to https://ant.design/changelog#3.22.0[v3.22.0]
+* antd library updated to {v3}[v3.22.0]
 
 === v3.21.1-0
 
-* antd library updated to https://ant.design/changelog#3.21.1[v3.21.1]
+* antd library updated to {v3}[v3.21.1]
 * added new component `breadcrumb-separator`
 
 === v3.19.0-0
 
-* antd library updated to https://ant.design/changelog#3.19.0[v3.19.0]
+* antd library updated to {v3}[v3.19.0]
 * added new components `mentions`, `descriptions`
