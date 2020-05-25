@@ -17,10 +17,10 @@ Add the following dependency in your project:
 [source,clojure]
 ----
 ;; project.clj or build.boot
-[ant.design "RELEASE"]
+[ant.design "6.3.0"]
 
 ;; deps.edn
-{:deps {ant.design {:mvn/version "RELEASE"}}}
+{:deps {ant.design {:mvn/version "6.3.0"}}}
 
 ----
 
@@ -69,4 +69,4 @@ deploy                         Deploy to clojars
 
 === License
 
-link:LICENSE[Copyright © 2019 Ilshat Sultanov]
+link:LICENSE[Copyright © 2019-2020 Ilshat Sultanov]
