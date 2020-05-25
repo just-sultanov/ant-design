@@ -1,11 +1,18 @@
 :v3: https://github.com/ant-design/ant-design/blob/3.x-stable/CHANGELOG.en-US.md
+
 == Changelog
+
+=== v6.3.0
+
+* antd updated to {v3}[v3.26.17]
+* clojure updated to 1.10.2-alpha1
+* clojurescript updated to 1.10.764
+* reagent updated to 1.0.0-alpha2
 
 === v6.2.1
 
 * antd library updated to {v3}[v3.26.12]
 * reagent library updated to 0.9.1
-* seancorfield/depstar library updated to 0.5.2
 
 === v6.2.0
 
